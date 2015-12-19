@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -18507,6 +18507,28 @@ Source: http://www.murata.com/ Ferrite Bead BLM15H.pdf</description>
 <wire x1="-0.25" y1="0.2" x2="-0.25" y2="-0.2" width="0.1524" layer="21"/>
 <wire x1="0.25" y1="0.2" x2="0.25" y2="-0.2" width="0.1524" layer="21"/>
 </package>
+<package name="GP.1575.25.4.A.02">
+<circle x="9.5" y="9.5" radius="0.1" width="0.8128" layer="21"/>
+<wire x1="12.55" y1="9.5" x2="12.55" y2="-11" width="0.127" layer="51"/>
+<wire x1="-11" y1="-12.55" x2="11" y2="-12.55" width="0.127" layer="51"/>
+<wire x1="11" y1="-12.55" x2="12.55" y2="-11" width="0.127" layer="51" curve="90"/>
+<wire x1="-12.55" y1="11" x2="-12.55" y2="-11" width="0.127" layer="51"/>
+<wire x1="-11" y1="-12.55" x2="-12.55" y2="-11" width="0.127" layer="51" curve="-90"/>
+<wire x1="-12.55" y1="11" x2="-11" y2="12.55" width="0.127" layer="51" curve="-90"/>
+<wire x1="-11" y1="12.55" x2="9.5" y2="12.55" width="0.127" layer="51"/>
+<wire x1="9.5" y1="12.55" x2="12.55" y2="9.5" width="0.127" layer="51" curve="-90"/>
+<wire x1="-11" y1="12.55" x2="-12.55" y2="11" width="0.2032" layer="21" curve="90"/>
+<wire x1="-12.55" y1="11" x2="-12.55" y2="-11" width="0.2032" layer="21"/>
+<wire x1="-12.55" y1="-11" x2="-11" y2="-12.55" width="0.2032" layer="21" curve="90"/>
+<wire x1="-11" y1="-12.55" x2="11" y2="-12.55" width="0.2032" layer="21"/>
+<wire x1="11" y1="-12.55" x2="12.55" y2="-11" width="0.2032" layer="21" curve="90"/>
+<wire x1="12.55" y1="-11" x2="12.55" y2="9.5" width="0.2032" layer="21"/>
+<wire x1="12.55" y1="9.5" x2="9.5" y2="12.55" width="0.2032" layer="21" curve="90"/>
+<wire x1="9.5" y1="12.55" x2="-11" y2="12.55" width="0.2032" layer="21"/>
+<pad name="1" x="-1.75" y="-1.75" drill="0.95"/>
+<text x="-11.5" y="10.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-11.5" y="-11.5" size="1.27" layer="27">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="CAT10">
@@ -30133,6 +30155,15 @@ and if done, will result in strict legal action.</text>
 <pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
 <pin name="2" x="0" y="-2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
 </symbol>
+<symbol name="CERAMIC-PATCH-ANTENNA">
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<pin name="PIN" x="0" y="-7.62" visible="off" length="middle" rot="R90"/>
+<text x="5.08" y="0" size="1.778" layer="95" rot="MR180" align="top-left">&gt;NAME</text>
+<text x="5.08" y="-2.54" size="1.778" layer="95">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="RESITOR_ARRAY">
@@ -30967,7 +30998,7 @@ Used, eg, on the Arduino Pro/ Pro Mini boards.&lt;br&gt;
 <gate name="G$1" symbol="ADP122" x="0" y="0"/>
 </gates>
 <devices>
-<device name="AUJZ-3.3-R7" package="SOT-23-5">
+<device name="AUJZ-3.3" package="SOT-23-5">
 <connects>
 <connect gate="G$1" pin="EN" pad="3"/>
 <connect gate="G$1" pin="GND" pad="2"/>
@@ -31151,7 +31182,7 @@ challenging environments.&lt;/p&gt;</description>
 <gate name="G$1" symbol="UBLOX-MAX-M8" x="-2.54" y="-5.08"/>
 </gates>
 <devices>
-<device name="-CASTELLATED" package="UBLOX-MAX-M8">
+<device name="Q" package="UBLOX-MAX-M8">
 <connects>
 <connect gate="G$1" pin="ANT_ON" pad="13"/>
 <connect gate="G$1" pin="EXTINT0" pad="5"/>
@@ -32320,19 +32351,13 @@ Source: http://www.murata.com/ Ferrite Bead BLM15H.pdf</description>
 <gate name="G$1" symbol="L" x="0" y="0"/>
 </gates>
 <devices>
-<device name="-CUSTOM" package="0402-FERRITE">
+<device name="SN1" package="0402-FERRITE">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
-<technology name="B121SN1"/>
-<technology name="B221SN1"/>
-<technology name="D102SN1"/>
-<technology name="D182SN1"/>
-<technology name="D601SN1"/>
-<technology name="G102SN1"/>
-<technology name="G601SN1"/>
+<technology name="D102"/>
 </technologies>
 </device>
 </devices>
@@ -32351,6 +32376,28 @@ Source: http://www.murata.com/ Ferrite Bead BLM15H.pdf</description>
 <technology name="">
 <attribute name="PROD_ID" value="CAP-12417"/>
 <attribute name="VALUE" value="1.0uF"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GP.1575.25.4.A.02">
+<description>&lt;b&gt;Taoglas GP.1575.25.4.A.02 4mm thick GPS Patch Antenna, 1575MHz&lt;/b&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;25mm*25mm*4mm&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="CERAMIC-PATCH-ANTENNA" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="GP.1575.25.4.A.02">
+<connects>
+<connect gate="G$1" pin="PIN" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DATASHEET" value="http://www.taoglas.com/images/product_images/original_images/GP.1575.25.4.A.02%20GPS%20Patch%20Antenna%201575MHz%20190410.pdf" constant="no"/>
+<attribute name="LINK" value="http://www.taoglas.com/antennas/GPS-GLONASS_Antennas/Internal_GPS_-_Passive_Ceramic_Patch_Antennas/" constant="no"/>
+<attribute name="MFGPN" value="GP.1575.25.4.A.02" constant="no"/>
 </technology>
 </technologies>
 </device>
